@@ -1,0 +1,25 @@
+{
+    "vendorId": "development",
+    "subjectId": "f4ca7c5e-1a53-428d-992b-0d2f76efc062",
+    "agentId": "654126",
+    "contactName": "John Doe",
+    "ttl": 3600,
+    "logoUrl": "https://www.dropbox.com/s/w1lusi42109twds/c2a-logo.png?raw=1",
+    "header1": "Call2Action",
+    "header2": "From Customer Dynamics",
+    "primaryColor": "#557B26",
+    "secondaryColor": "#77A92F",
+    "supportEmail": "support@customerdynamics.com",
+    "supportPhone": "+18013609909",
+    "c2a": {
+        "payment": null,
+        "callMe": null,
+        "callMeLater": null,
+        "callUs": null,
+        "fileDownload": null,
+        "redirect": null,
+        "optOut": null,
+        "optIn": null,
+        "esign": null
+    }
+}

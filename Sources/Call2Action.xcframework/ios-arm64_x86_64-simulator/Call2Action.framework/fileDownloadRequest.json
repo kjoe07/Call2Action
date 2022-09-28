@@ -1,0 +1,15 @@
+{
+    "text": "Access your training materials",
+    "files": [
+        {
+            "name": "Onboarding",
+            "description": "A quick onboarding overview to get you started",
+            "url": "https://www.jussantacruz.gob.ar/pdfs/direccion-informatica/manual_pdfcreator24%20v.1.pdf"
+        },
+        {
+            "name": "Employee Handbook",
+            "description": "Everything you need to know about being an employee",
+            "url": "https://www.sony.com/electronics/support/res/manuals/4124/41241131M.pdf"
+        }
+    ]
+}

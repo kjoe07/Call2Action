@@ -1,0 +1,11 @@
+framework module Call2Action {
+  umbrella header "Call2Action.h"
+
+  export *
+  module * { export * }
+}
+
+module Call2Action.Swift {
+  header "Call2Action-Swift.h"
+  requires objc
+}

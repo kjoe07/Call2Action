@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AcceptSDK",
+        "repositoryURL": "https://github.com/kjoe07/accept-sdk-ios",
+        "state": {
+          "branch": "1.0.1",
+          "revision": "7a591feb94d64568357a3fb3c97cb4f4a4380cfa",
+          "version": null
+        }
+      },
+      {
+        "package": "ActivityIndicator",
+        "repositoryURL": "https://github.com/kjoe07/ActivityIndicator",
+        "state": {
+          "branch": "1.1.0",
+          "revision": "b4384ed8f9a788fc915ff0af647347e8e3fb6cab",
+          "version": null
+        }
+      },
+      {
+        "package": "FaviconFinder",
+        "repositoryURL": "https://github.com/will-lumley/FaviconFinder.git",
+        "state": {
+          "branch": "3.2.1",
+          "revision": "712bd469aed40ae22903425a5a9e9829faf77700",
+          "version": null
+        }
+      },
+      {
+        "package": "ShortDatePicker",
+        "repositoryURL": "https://github.com/kjoe07/ShortDatePicker",
+        "state": {
+          "branch": "1.0.1",
+          "revision": "397ed73ff810db04b18169634ac17fc6c455595d",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftSoup",
+        "repositoryURL": "https://github.com/scinfu/SwiftSoup.git",
+        "state": {
+          "branch": null,
+          "revision": "6778575285177365cbad3e5b8a72f2a20583cfec",
+          "version": "2.4.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

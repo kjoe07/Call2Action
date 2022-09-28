@@ -1,0 +1,15 @@
+{
+    "text": "Get additional help",
+    "redirects": [
+        {
+            "name": "Troubleshooting",
+            "description": "Let's try to troubleshoot the issue first. Follow our troubleshooting steps in the link below.",
+            "url": "https://customerdynamics.visualstudio.com/Product%20Development/_git/OutReach%20Select/commit/25be10fdfce91d6c82ec765e2319db001d4af5a1?refName=refs%2Fheads%2Frelease%2Fsafe-select-ga&path=%2Fsrc%2Fppay%2FPaymentProfile.js&_a=compare"
+        },
+        {
+            "name": "Support",
+            "description": "Still need help? Our support page has you covered. Follow the link below.",
+            "url": "https://customerdynamics.visualstudio.com/Product%20Development/_git/OutReach%20Select/commit/25be10fdfce91d6c82ec765e2319db001d4af5a1?refName=refs%2Fheads%2Frelease%2Fsafe-select-ga&path=%2Fsrc%2Fppay%2FPaymentProfile.js&_a=compare"
+        }
+    ]
+}

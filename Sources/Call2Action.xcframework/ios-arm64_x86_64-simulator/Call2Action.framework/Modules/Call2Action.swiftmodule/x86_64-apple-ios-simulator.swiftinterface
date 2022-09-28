@@ -1,0 +1,406 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Call2Action
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+@_exported import Call2Action
+import Foundation
+import PassKit
+import SafariServices
+import Swift
+import UIKit
+import UniformTypeIdentifiers
+import _Concurrency
+import _StringProcessing
+public struct OptInAction : Swift.Codable {
+  public init(text: Swift.String, fields: [Swift.String], finalize: Swift.Bool?)
+  public let text: Swift.String
+  public var fields: [Swift.String]
+  public let finalize: Swift.Bool?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct PaymentInfo : Swift.Codable {
+  public init(name: Swift.String, address1: Swift.String, address2: Swift.String, city: Swift.String, state: Swift.String, zipCode: Swift.String, cardAmount: Swift.Double, cvv: Swift.String, expiration: Swift.String, token: Swift.String)
+  public var name: Swift.String
+  public var address1: Swift.String
+  public var address2: Swift.String
+  public var city: Swift.String
+  public var state: Swift.String
+  public var zipCode: Swift.String
+  public var cardAmount: Swift.Double
+  public var cvv: Swift.String
+  public var expiration: Swift.String
+  public var token: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct CallUsAction {
+  public init(text: Swift.String, pointOfContact: Swift.String, finalize: Swift.Bool?)
+  public let text: Swift.String
+  public var pointOfContact: Swift.String
+  public let finalize: Swift.Bool?
+}
+extension Call2Action.CallUsAction : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct File {
+  public init(name: Swift.String, description: Swift.String, url: Swift.String)
+  public let name: Swift.String
+  public let description: Swift.String
+  public let url: Swift.String
+}
+extension Call2Action.File : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class PaymentViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: Call2Action.PaymentInfoViewModel)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @objc deinit
+}
+extension Call2Action.PaymentViewController : UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldClear(_ textField: UIKit.UITextField) -> Swift.Bool
+}
+extension Call2Action.PaymentViewController : PassKit.PKPaymentAuthorizationViewControllerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func paymentAuthorizationViewController(_ controller: PassKit.PKPaymentAuthorizationViewController, didAuthorizePayment payment: PassKit.PKPayment, completion: @escaping ((PassKit.PKPaymentAuthorizationStatus) -> Swift.Void))
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func paymentAuthorizationViewControllerDidFinish(_ controller: PassKit.PKPaymentAuthorizationViewController)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CustomTextfield : UIKit.UITextField {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func textRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func editingRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public struct RedirectAction {
+  public init(text: Swift.String, redirects: [Call2Action.Redirect])
+  public let text: Swift.String
+  public let redirects: [Call2Action.Redirect]
+}
+extension Call2Action.RedirectAction : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct ActionRequest {
+  public init(id: Swift.String?, vendorId: Swift.String, vendor: Call2Action.Vendor?, c2a: Call2Action.Action, subjectId: Swift.String, agentId: Swift.String, contactName: Swift.String, ttl: Swift.Int, logoUrl: Swift.String, header1: Swift.String, header2: Swift.String, primaryColor: Swift.String, secondaryColor: Swift.String, supportEmail: Swift.String, supportPhone: Swift.String, metaData: Swift.String? = nil, createdAt: Swift.String?, updatedAt: Swift.String?, fields: [Swift.String]?, imageData: Swift.String?, esignDate: Swift.String?)
+  public var vendorId: Swift.String
+  public var c2a: Call2Action.Action
+  public let subjectId: Swift.String
+  public let agentId: Swift.String
+  public let contactName: Swift.String
+  public let ttl: Swift.Int
+  public let logoUrl: Swift.String
+  public let header1: Swift.String
+  public let header2: Swift.String
+  public let primaryColor: Swift.String
+  public let secondaryColor: Swift.String
+  public let supportEmail: Swift.String
+  public let supportPhone: Swift.String
+  public let id: Swift.String?
+  public let vendor: Call2Action.Vendor?
+  public var metaData: Swift.String?
+  public let createdAt: Swift.String?
+  public let updatedAt: Swift.String?
+  public var fields: [Swift.String]?
+  public var imageData: Swift.String?
+  public var esignDate: Swift.String?
+}
+extension Call2Action.ActionRequest : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct OptOutAction {
+  public init(text: Swift.String?, finalize: Swift.Bool?, fields: [Swift.String]? = nil)
+  public let text: Swift.String?
+  public var fields: [Swift.String]?
+  public let finalize: Swift.Bool?
+}
+extension Call2Action.OptOutAction : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct FileDownloadAction {
+  public init(text: Swift.String, files: [Call2Action.File])
+  public let text: Swift.String
+  public let files: [Call2Action.File]
+}
+extension Call2Action.FileDownloadAction : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public class C2AKit {
+  public init(session: Foundation.URLSession = URLSession.shared)
+  public func createActionRequest(actionRequest: Call2Action.ActionRequest, completion: @escaping (Swift.Result<Call2Action.CreatePaymentRequestResponse, Swift.Error>) -> Swift.Void)
+  public func getActionRequest(actionRequestId: Swift.String, completion: @escaping (Swift.Result<Call2Action.ActionRequest, Swift.Error>) -> Swift.Void) throws
+  public func startCall(actionRequest: Call2Action.ActionRequest, completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  public func requestCall(actionRequest: Call2Action.ActionRequest, completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  public func scheduleCall(actionRequest: Call2Action.ActionRequest, callbackTime: Swift.String, completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  public func makePayment(actionRequest: Call2Action.ActionRequest, paymentInfo: Call2Action.PaymentInfo, completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  public func optIn(actionReques: Call2Action.ActionRequest, completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  public func optOut(actionReques: Call2Action.ActionRequest, completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  public func eSign(actionReques: Call2Action.ActionRequest, completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  public func downloadFile(actionReques: Call2Action.ActionRequest, fileName: Swift.String, completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  public func redirect(actionReques: Call2Action.ActionRequest, fileName: Swift.String, completion: @escaping (Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)
+  public func validateCardInfo(cardNumber: Swift.String, inSecurityCode: Swift.String, inMonth: Swift.String, inYear: Swift.String) -> Swift.Bool
+  public func sendReceipt(transactionId: Swift.String, emailAddress: Swift.String, completion: @escaping ((Swift.String) -> Swift.Void)) throws
+  @objc deinit
+}
+public enum C2AError : Swift.Error, Foundation.LocalizedError {
+  case invalidRequest
+  case badData
+  case unAuthorized
+  case emptyId
+  case serverError
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public static func == (a: Call2Action.C2AError, b: Call2Action.C2AError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct CallMeLaterAction {
+  public init(text: Swift.String, phoneNumber: Swift.String, metaData: Swift.String, finalize: Swift.Bool?)
+  public let text: Swift.String
+  public var phoneNumber: Swift.String
+  public let metaData: Swift.String
+  public var finalize: Swift.Bool?
+}
+extension Call2Action.CallMeLaterAction : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Action {
+  public init(payment: Call2Action.PaymentAction?, callMe: Call2Action.CallMeAction?, callMeLater: Call2Action.CallMeLaterAction?, callUs: Call2Action.CallUsAction?, optOut: Call2Action.OptOutAction?, optIn: Call2Action.OptInAction?, fileDownload: Call2Action.FileDownloadAction?, redirect: Call2Action.RedirectAction?, esign: Call2Action.EsignAction?)
+  public var payment: Call2Action.PaymentAction?
+  public var callMe: Call2Action.CallMeAction?
+  public var callMeLater: Call2Action.CallMeLaterAction?
+  public var callUs: Call2Action.CallUsAction?
+  public var optOut: Call2Action.OptOutAction?
+  public var optIn: Call2Action.OptInAction?
+  public var fileDownload: Call2Action.FileDownloadAction?
+  public var redirect: Call2Action.RedirectAction?
+  public var esign: Call2Action.EsignAction?
+}
+extension Call2Action.Action : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct ProcessorInfo {
+  public init(tokenKey: Swift.String, apiKey: Swift.String)
+  public let tokenKey: Swift.String
+  public let apiKey: Swift.String
+}
+extension Call2Action.ProcessorInfo : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension UIKit.UIColor {
+  public static func hexStringToUIColor(hex: Swift.String) -> UIKit.UIColor
+}
+public struct RequestBody : Swift.Codable {
+  public init(paymentInfo: Call2Action.PaymentInfo?, paymentRequest: Call2Action.ActionRequest, fileName: Swift.String?, callBackTime: Swift.String?)
+  public let paymentInfo: Call2Action.PaymentInfo?
+  public let paymentRequest: Call2Action.ActionRequest
+  public let fileName: Swift.String?
+  public let callBackTime: Swift.String?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct PaymentAction {
+  public init(invoiceId: Swift.String?, amountDue: Swift.Double, agingInfo: Swift.String, minimumPayment: Swift.Double, finalize: Swift.Bool?)
+  public let invoiceId: Swift.String?
+  public let amountDue: Swift.Double
+  public var agingInfo: Swift.String
+  public var minimumPayment: Swift.Double
+  public var finalize: Swift.Bool?
+}
+extension Call2Action.PaymentAction : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public class CreateActionRequestViewModel : Call2Action.CreateActionRequestRepresentable {
+  public var callClosure: ((Swift.Int) -> Swift.Void)?
+  public var action: Call2Action.ActionRequest!
+  final public let model: Call2Action.ActionType
+  public var cellsArray: [UIKit.UITableViewCell.Type]
+  public var validationClosure: ((Swift.String) -> Swift.Void)?
+  public var showActivity: (() -> Swift.Void)?
+  public var dissmissClosure: (() -> Swift.Void)?
+  public var dataReady: (() -> Swift.Void)?
+  public var showGeneralActivity: (() -> Swift.Void)?
+  public var id: Swift.String
+  public var title: Swift.String {
+    get
+  }
+  public init(id: Swift.String, model: Call2Action.ActionType, client: Call2Action.C2AKit = C2AKit())
+  @objc deinit
+  public func numberOfItems() -> Swift.Int
+  public func viewModelForCard(index: Swift.Int) -> Call2Action.CardCellViewModelRepresentable
+  public func loadData(with id: Swift.String)
+  public func viewDidLoad()
+}
+public protocol CardCellRepresentable : UIKit.UITableViewCell {
+  func configure(viewModel: Call2Action.CardCellViewModelRepresentable)
+  var viewModel: Call2Action.CardCellViewModelRepresentable! { get set }
+  var shadowSpread: CoreFoundation.CGFloat { get }
+  var shadowsOffSetWidth: CoreFoundation.CGFloat { get }
+  var shadowsOffSetHeight: CoreFoundation.CGFloat { get }
+  var shadowOpacity: Swift.Float { get }
+  var shadowColor: CoreGraphics.CGColor { get }
+}
+public protocol CardCellViewModelRepresentable {
+  var action: Call2Action.ActionRequest { get set }
+  var client: Call2Action.C2AKit { get }
+  var closure: ((Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void)? { get set }
+  func sentRequest(paymentInfo: Call2Action.PaymentInfo?, fileName: Swift.String?, callbackTime: Swift.String?)
+}
+public protocol PaymentViewModelRepresentable {
+  func amountToPay() -> Swift.String
+}
+public struct PaymentInfoViewModel {
+  public init(action: Call2Action.ActionRequest, client: Call2Action.C2AKit)
+}
+extension Foundation.NSNotification.Name {
+  public enum C2A {
+    public static let paymentActivity: Foundation.Notification.Name
+    public static let callUsAction: Foundation.Notification.Name
+    public static let callUSActionComplete: Foundation.Notification.Name
+    public static let callmeAction: Foundation.Notification.Name
+    public static let actionCompleted: Foundation.Notification.Name
+    public static let validation: Foundation.Notification.Name
+    public static let error: Foundation.Notification.Name
+    public static let callmeLaterHour: Foundation.Notification.Name
+    public static let showActivity: Foundation.Notification.Name
+    public static let hideActivity: Foundation.Notification.Name
+    public static let optInAction: Foundation.Notification.Name
+    public static let optOut: Foundation.Notification.Name
+    public static let eSign: Foundation.Notification.Name
+    public static let download: Foundation.Notification.Name
+    public static let downloaded: Foundation.Notification.Name
+    public static let downloadError: Foundation.Notification.Name
+  }
+}
+public struct Vendor {
+  public init(id: Swift.String, name: Swift.String, procId: Swift.String?, status: Swift.String, accountNum: Swift.String, routingNum: Swift.String, achTransFee: Swift.Double, achRate: Swift.Double, ccTransFee: Swift.Double, ccRate: Swift.Double, processorInfo: Call2Action.ProcessorInfo, gateway: Swift.String, createdAt: Swift.String, updatedAt: Swift.String)
+  public let id: Swift.String
+  public let name: Swift.String
+  public let procId: Swift.String?
+  public let status: Swift.String
+  public let accountNum: Swift.String
+  public let routingNum: Swift.String
+  public let achTransFee: Swift.Double
+  public let achRate: Swift.Double
+  public let ccTransFee: Swift.Double
+  public let ccRate: Swift.Double
+  public let processorInfo: Call2Action.ProcessorInfo
+  public let gateway: Swift.String
+  public let createdAt: Swift.String
+  public let updatedAt: Swift.String
+}
+extension Call2Action.Vendor : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct CreatePaymentRequestResponse : Swift.Codable {
+  public init(url: Swift.String)
+  public let url: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class CreateActionRequestViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public init(viewModel: Call2Action.CreateActionRequestRepresentable)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @objc deinit
+}
+extension Call2Action.CreateActionRequestViewController : UIKit.UITableViewDataSource {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+}
+extension Call2Action.CreateActionRequestViewController : UIKit.UITableViewDelegate {
+}
+public protocol CreateActionRequestRepresentable {
+  var title: Swift.String { get }
+  var action: Call2Action.ActionRequest! { get }
+  var model: Call2Action.ActionType { get }
+  var callClosure: ((Swift.Int) -> Swift.Void)? { get set }
+  func numberOfItems() -> Swift.Int
+  var cellsArray: [UIKit.UITableViewCell.Type] { get }
+  var validationClosure: ((Swift.String) -> Swift.Void)? { get set }
+  var showActivity: (() -> Swift.Void)? { get set }
+  func viewModelForCard(index: Swift.Int) -> Call2Action.CardCellViewModelRepresentable
+  var dissmissClosure: (() -> Swift.Void)? { get set }
+  var dataReady: (() -> Swift.Void)? { get set }
+  var showGeneralActivity: (() -> Swift.Void)? { get set }
+  var id: Swift.String { get }
+  func loadData(with id: Swift.String)
+  func viewDidLoad()
+}
+public struct EsignAction {
+  public init(text: Swift.String, finalize: Swift.Bool?, fields: [Swift.String])
+  public var text: Swift.String
+  public let finalize: Swift.Bool?
+  public let fields: [Swift.String]
+}
+extension Call2Action.EsignAction : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Redirect {
+  public init(name: Swift.String, description: Swift.String, url: Swift.String)
+  public let name: Swift.String
+  public let description: Swift.String
+  public let url: Swift.String
+}
+extension Call2Action.Redirect : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum ActionType : Swift.String {
+  case payment
+  case callMe
+  case callMeLater
+  case callUs
+  case optOut
+  case optIn
+  case fileDownload
+  case redirect
+  case esign
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension Call2Action.ActionType : Swift.CaseIterable {
+  public static var allCases: [Call2Action.ActionType] {
+    get
+  }
+  public typealias AllCases = [Call2Action.ActionType]
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public var isJailBroken: Swift.Bool {
+    get
+  }
+}
+public struct CallMeAction {
+  public init(text: Swift.String, phoneNumber: Swift.String, metaData: Swift.String, finalize: Swift.Bool?)
+  public let text: Swift.String
+  public var phoneNumber: Swift.String
+  public let metaData: Swift.String
+  public let finalize: Swift.Bool?
+}
+extension Call2Action.CallMeAction : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension Call2Action.C2AError : Swift.Equatable {}
+extension Call2Action.C2AError : Swift.Hashable {}
+extension Call2Action.ActionType : Swift.Equatable {}
+extension Call2Action.ActionType : Swift.Hashable {}
+extension Call2Action.ActionType : Swift.RawRepresentable {}
