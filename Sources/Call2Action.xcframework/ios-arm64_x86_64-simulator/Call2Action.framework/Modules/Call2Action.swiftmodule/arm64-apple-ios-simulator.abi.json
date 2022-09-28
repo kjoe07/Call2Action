@@ -15305,6 +15305,34 @@
           },
           {
             "kind": "Function",
+            "name": "finishDonwload",
+            "printedName": "finishDonwload(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Notification",
+                "printedName": "Foundation.Notification",
+                "usr": "s:10Foundation12NotificationV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Call2Action@objc(cs)FileDownloadTableViewCell(im)finishDonwload:",
+            "mangledName": "$s11Call2Action25FileDownloadTableViewCellC14finishDonwloadyy10Foundation12NotificationVF",
+            "moduleName": "Call2Action",
+            "isOpen": true,
+            "declAttributes": [
+              "Custom",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "hideIndicator",
             "printedName": "hideIndicator()",
             "children": [
